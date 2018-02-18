@@ -12,7 +12,12 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.container}>
+        <Text style={styles.appTitle}>#PowerHouse</Text>
+        <View style={[styles.budgetView, styles.grayBG]}>
+          <Text style={styles.budgetText}>Budget:</Text>
+          <Text style={[styles.budgetText, styles.boldText]}>$15,000</Text>
+        </View>
         <ModalNavigator />
       </View>
     );
@@ -27,8 +32,10 @@ class HomeScreen extends Component {
 
   render() {
     const items = [
-      { name: 'Kitchen Appliances', code: '#1abc9c' },{ name: 'Bathroom', code: '#3498db' }, 
-      { name: 'Lights', code: '#9b59b6' }, { name: 'Water System', code: '#e74c3c' }, 
+      { name: 'Heating/Cooling System', code: '#1abc9c' },
+      { name: 'Laundry', code: '#3498db' }, 
+      { name: 'Fridge', code: '#9b59b6' },
+      { name: 'Small Kitchen Appliances', code: '#e74c3c' }, 
     ];
 
     const { navigate } = this.props.navigation;
@@ -37,7 +44,7 @@ class HomeScreen extends Component {
       <GridView
         itemDimension={130}
         items={items}
-        style={styles.gridView}
+        style={styles.grayBG}
         renderItem={item => (
           <View>
             <TouchableHighlight style={styles.button} onPress={() => navigate("Login")}>
@@ -92,11 +99,12 @@ const ModalNavigator = StackNavigator(
 
 
 const styles = StyleSheet.create({
-  gridView: {
-    paddingTop: Expo.Constants.statusBarHeight+20,
+  container: {
+    flex: 1,
+    paddingTop: Expo.Constants.statusBarHeight,
   },
   itemContainer: {
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     borderRadius: 5,
     padding: 10,
     height: 200,
@@ -105,5 +113,24 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#fff',
     fontWeight: '600',
+    textAlign: 'center'
   },
+  appTitle: {
+    fontSize: 48,
+    textAlign: 'center',
+    margin: 10
+  },
+  budgetView: {
+    padding: 25,
+  },
+  budgetText: {
+    fontSize: 20,
+    textAlign: 'center'
+  },
+  boldText: {
+    fontWeight: 'bold'
+  },
+  grayBG: {
+    backgroundColor: '#e9e9ef'
+  }
 });
