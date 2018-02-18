@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     paddingTop: Expo.Constants.statusBarHeight,
   },
   itemContainer: {
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     borderRadius: 5,
     padding: 10,
     height: 200,
@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#fff',
     fontWeight: '600',
+    textAlign: 'center'
   },
   appTitle: {
     fontSize: 48,
