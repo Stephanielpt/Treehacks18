@@ -1,7 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, Keyboard } from 'react-native';
 
+import SwipeCards from './SwipeCards';
+
 export default class App extends React.Component {
+  render() {
+    return (
+      <SwipeCards style={{ flex: 1 }} />
+    );
+  }
+
+  /*
   render() {
     return (
       <View style={styles.container}>
@@ -14,6 +23,7 @@ export default class App extends React.Component {
       </View>
     );
   }
+  */
 }
 
 const styles = StyleSheet.create({
