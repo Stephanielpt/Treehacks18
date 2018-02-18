@@ -14,6 +14,10 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.appTitle}>#PowerHouse</Text>
+        <View style={[styles.budgetView, styles.grayBG]}>
+          <Text style={styles.budgetText}>Budget:</Text>
+          <Text style={[styles.budgetText, styles.boldText]}>$15,000</Text>
+        </View>
         <ModalNavigator />
       </View>
     );
@@ -40,6 +44,7 @@ class HomeScreen extends Component {
       <GridView
         itemDimension={130}
         items={items}
+        style={styles.grayBG}
         renderItem={item => (
           <View>
             <TouchableHighlight style={styles.button} onPress={() => navigate("Login")}>
@@ -112,5 +117,19 @@ const styles = StyleSheet.create({
   appTitle: {
     fontSize: 48,
     textAlign: 'center',
+    margin: 10
+  },
+  budgetView: {
+    padding: 25,
+  },
+  budgetText: {
+    fontSize: 20,
+    textAlign: 'center'
+  },
+  boldText: {
+    fontWeight: 'bold'
+  },
+  grayBG: {
+    backgroundColor: '#e9e9ef'
   }
 });
