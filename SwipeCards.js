@@ -6,6 +6,8 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 
 import SwipeCards from 'react-native-swipe-cards';
 
+import Images from './images/heating-cooling';
+
 class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,7 @@ class Card extends React.Component {
     return (
       <View style={[styles.card, {backgroundColor: this.props.backgroundColor}]}>
         <Text>{this.props.text}</Text>
+        <Image source{{uri: this.props.source}} style={{width: 40, height: 40}} />
       </View>
     )
   }
@@ -39,12 +42,8 @@ export default class extends React.Component {
     super(props);
     this.state = {
       cards: [
-        {text: 'Treehax', backgroundColor: 'red'},
-        {text: 'Aubergine', backgroundColor: 'purple'},
-        {text: 'Courgette', backgroundColor: 'green'},
-        {text: 'Blueberry', backgroundColor: 'blue'},
-        {text: 'Umm...', backgroundColor: 'cyan'},
-        {text: 'orange', backgroundColor: 'orange'},
+        {text: "Air Source Heat Pump" , source: 'https://www.alpinehomeair.com/partnernet/photoFiles/LiveCache/imgCache-BMKH_640_0.jpg', backgroundColor: 'red'},
+        {text: "Ground Source Heat Pump", source: 'http://images.inyopools.com/cloud/images/hayward-hp21404t-01.jpeg?format=jpg&scale=both&anchor=middlecenter&autorotate=true&mode=pad&width=650&height=650', backgroundColor: 'purple'},
       ]
     };
   }
