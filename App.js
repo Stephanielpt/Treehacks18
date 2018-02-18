@@ -4,16 +4,15 @@ import GridView from 'react-native-super-grid';
 
 import SwipeCards from './SwipeCards';
 import { StackNavigator } from 'react-navigation';
-
+import { Easing } from 'react-native';
+import { Animated } from 'react-native';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const { navigate } = this.props.navigation;
-
     return (
-      <View>
+      <View style={{flex: 1}}>
         <ModalNavigator />
       </View>
     );
@@ -32,7 +31,7 @@ class HomeScreen extends Component {
       { name: 'Lights', code: '#9b59b6' }, { name: 'Water System', code: '#e74c3c' }, 
     ];
 
-    const navigate = this.props.navigation;
+    const { navigate } = this.props.navigation;
 
     return (
       <GridView
