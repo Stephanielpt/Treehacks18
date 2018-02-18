@@ -39,7 +39,7 @@ export default class extends React.Component {
     super(props);
     this.state = {
       cards: [
-        {text: 'Tomato', backgroundColor: 'red'},
+        {text: 'Treehax', backgroundColor: 'red'},
         {text: 'Aubergine', backgroundColor: 'purple'},
         {text: 'Courgette', backgroundColor: 'green'},
         {text: 'Blueberry', backgroundColor: 'blue'},
